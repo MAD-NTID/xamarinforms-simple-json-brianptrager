@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Bill Gates",
+    "email": "billgates@microsoft.com"
+  },
+  {
+    "name": "Larry Stooge",
+    "email": "larry@threestooges.com"
+  },
+  {
+    "name": "Emily Wellington",
+    "email": "emily@wellingtonfamily.org"
+  },
+  {
+    "name": "Lebron James",
+    "email": "lebron@noshame.net"
+  }
+]
