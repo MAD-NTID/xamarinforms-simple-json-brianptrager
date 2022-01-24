@@ -19,18 +19,17 @@ namespace JSONListView
         public MainPage()
         {
             InitializeComponent();
+            PersonData.LoadData();
             BindingContext = this;
+            people = new ObservableCollection<Person>(PersonData.people);
+            MyListView.ItemsSource = people;
 
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream("JSONListView.testmodel.json");
-            string text = "";
-            using (var reader = new StreamReader(stream))
-            {
-                text = reader.ReadToEnd();
-                List<Person> myObjects = JsonConvert.DeserializeObject<List<Person>>(text);
-                people = new ObservableCollection<Person>(myObjects);
-                MyListView.ItemsSource = people;
-            }
+        }
+
+        private async void MyListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Person person = (Person)e.Item;
+            await Navigation.PushAsync(new DetailsPage(person));
         }
     }
 }

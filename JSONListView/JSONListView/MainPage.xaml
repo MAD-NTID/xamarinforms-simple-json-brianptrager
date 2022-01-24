@@ -4,7 +4,7 @@
              x:Class="JSONListView.MainPage">
 
     <StackLayout>
-        <ListView x:Name="MyListView" Margin="0,50,0,0">
+        <ListView x:Name="MyListView" Margin="0,50,0,0" ItemTapped="MyListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" Detail="{Binding Email}" />
